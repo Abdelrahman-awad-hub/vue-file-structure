@@ -1,0 +1,60 @@
+/* Smooth scroll behavior */
+:root {
+    scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+  # General
+  --------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #02ef96;
+}
+
+a {
+    color: #fff;
+    text-decoration: none !important;
+}
+
+@mixin breakpoint($size: xs) {
+    @if $size == xs {
+        @media (min-width: 0px) {
+            @content;
+        }
+    } @else if $size == sm {
+        @media (min-width: 576px) {
+            @content;
+        }
+    } @else if $size == md {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $size == lg {
+        @media (min-width: 992px) {
+            @content;
+        }
+    } @else if $size == xl {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $size == xxl {
+        @media (min-width: 1400px) {
+            @content;
+        }
+    }
+}
